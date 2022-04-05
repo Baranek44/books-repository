@@ -1,15 +1,17 @@
 {% extends '_base.html' %}
+{% load static %}
 
-{% block title %}HOME{% endblock title %}
+{% block title %}Home{% endblock title %}
 
 {% block content %}
 <h1>Homepage</h1>
-
+<img class="bookcover" src="{% static 'images/book1.png' %}">
 {% if user.is_authenticated %}
-    H1 {{ user.email }}!
+    <p>Hi {{ user.email }}!</p>
     <p><a href="{% url 'logout' %}">Log Out</a></p>
 {% else %}
     <p>You are not logged in</p>
-    <a href="{% url 'login' %}">Log In</a>
+    <p><a href="{% url 'login' %}">Log In</a> |
+        <a href="{% url 'signup' %}">Sign Up</a></p>
 {% endif %}
 {% endblock content %}
