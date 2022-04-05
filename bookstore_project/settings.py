@@ -135,3 +135,6 @@ AUTH_USER_MODEL = 'users.CustomUser'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+# django-crispy-froms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
